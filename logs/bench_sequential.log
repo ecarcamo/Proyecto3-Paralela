@@ -1,0 +1,31 @@
+Corrida 1/5
+  listado_split: 0.021 s
+  preparacion_datos: 7.715 s
+E0000 00:00:1794799247.581430  910617 cuda_platform.cc:52] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected
+  entrenamiento: 37.991 s
+  inferencia: 0.585 s
+  accuracy prueba: 0.9238
+Corrida 2/5
+  listado_split: 0.027 s
+  preparacion_datos: 8.780 s
+  entrenamiento: 36.165 s
+  inferencia: 0.594 s
+  accuracy prueba: 0.8958
+Corrida 3/5
+  listado_split: 0.027 s
+  preparacion_datos: 7.667 s
+  entrenamiento: 36.640 s
+  inferencia: 0.584 s
+  accuracy prueba: 0.9291
+Corrida 4/5
+  listado_split: 0.027 s
+  preparacion_datos: 8.855 s
+  entrenamiento: 36.567 s
+  inferencia: 0.591 s
+  accuracy prueba: 0.9525
+Corrida 5/5
+  listado_split: 0.024 s
+  preparacion_datos: 7.608 s
+  entrenamiento: 36.636 s
+  inferencia: 0.584 s
+  accuracy prueba: 0.9372
