@@ -1,6 +1,7 @@
 # Proyecto 3 — Mejorando algoritmos con CUDA
 
 **CC3069 Computación Paralela y Distribuida · Universidad del Valle de Guatemala · Semestre II 2026**
+
 Diego López (`dlop6`) · Nicolás Concuá (`NicoCT04`) · Esteban Cárcamo (`ecarcamo`) · 15 de noviembre de 2026
 
 > Algoritmo acelerado: **Laboratorio 3 de Data Science, clasificador del alfabeto de señas americano (ASL)** con una
@@ -290,3 +291,39 @@ Porque cada tipo de trabajo encaja con un hardware distinto:
 | `cuda.to_device`, `device_array`, `copy_to_host`, `cuda.event` | Memoria de la GPU, copias y medición de tiempos con eventos |
 | `numba-cuda[cu12]`, `cuda-bindings` | Compilador de Numba para CUDA 12 (comparte librerías con TensorFlow) |
 | `nvidia-smi --query-gpu ... -lms 250` | Monitoreo de uso, memoria, potencia y reloj de la GPU |
+
+## 9. Conclusiones
+
+1. Separar el pipeline por tipo de trabajo redujo el tiempo total de **52.4 s a 14.0 s (×3.74)** con la misma
+   accuracy. Los archivos en los núcleos del CPU (×8.5–9.9) y la red neuronal en la GPU (×3.4 en la submuestra y ×4.95
+   en el dataset completo).
+2. La preparación de datos era un bucle secuencial escondido que ocupaba un solo núcleo. Paralelizarla con procesos y
+   memoria compartida fue la mejora más grande y la más barata.
+3. CUDA acelera la matemática, pero con un modelo pequeño la GPU queda subutilizada. Los costos fijos
+   (inicialización, trazado, despacho desde Python) definen cuánto se gana; por eso la ventaja crece con más datos.
+4. Escribir los kernels con Numba mostró cómo repartir el trabajo en hilos, bloques y grids. También mostró que el uso
+   de la memoria compartida pesa tanto como el número de hilos: la versión con mosaicos duplicó a la ingenua y llegó a
+   1.4 veces el tiempo de cuDNN.
+
+## 10. Contribuciones
+
+| Integrante | Responsabilidad | Commits principales |
+|---|---|---|
+| Diego López (`dlop6`) | Línea base secuencial, medición y análisis | Traslado del Lab 3 (`src/sequential/`), medición por fases y monitor de núcleos (`src/benchmark/`), análisis de los pasos 1–2, corrida final de benchmarks, comparación y figuras (`analysis/`), notebook e informe |
+| Nicolás Concuá (`NicoCT04`) | Preparación de datos en paralelo en el CPU | Carga con `multiprocessing` y memoria compartida (`src/parallel_cpu/`), escalabilidad de 1 a 32 procesos y `fork` vs `spawn`, pipeline `tf.data`, pool persistente, análisis del paso 3 y discusión 8.1 |
+| Esteban Cárcamo (`ecarcamo`) | Entorno CUDA y GPU | Entorno e inventario de hardware, entrenamiento en GPU (`src/gpu/train.py`), monitor de `nvidia-smi`, kernels Numba CUDA (`src/gpu/kernels.py`), diseño y resultados de los pasos 4–5 y discusión 8.2–8.4 |
+
+Por autorización del catedrático, todo se ejecutó en la computadora de Esteban, porque las de los otros dos
+integrantes se dañaron. Cada commit lleva el usuario de quien hizo esa parte.
+
+## Anexo: cómo reproducir
+
+```bash
+uv venv --python 3.11 .venv
+uv pip install --python .venv/bin/python -r requirements.txt
+.venv/bin/python setup_dataset.py
+./scripts/run_all_benchmarks.sh
+.venv/bin/python -m analysis.compare
+.venv/bin/jupyter nbconvert --to notebook --execute --inplace notebooks/proyecto3.ipynb
+.venv/bin/python report/build_report.py
+```

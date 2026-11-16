@@ -12,3 +12,5 @@ kagglehub==1.0.3
 jupyter==1.1.1
 nbconvert==7.17.2
 ipykernel==7.4.0
+markdown==3.11.3
+weasyprint==70.0

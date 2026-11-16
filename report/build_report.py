@@ -12,7 +12,7 @@ h1 { font-size: 17pt; margin: 0 0 4pt 0; }
 h2 { font-size: 13pt; margin-top: 16pt; border-bottom: 1px solid #e4e3df; padding-bottom: 2pt; }
 h3 { font-size: 11pt; margin-top: 12pt; }
 table { border-collapse: collapse; width: 100%; margin: 6pt 0 10pt 0; font-size: 8.5pt; page-break-inside: avoid; }
-th, td { border: 1px solid #e4e3df; padding: 3pt 5pt; text-align: left; vertical-align: top; }
+th, td { border: 1px solid #e4e3df; padding: 3pt 5pt; text-align: left; vertical-align: top; overflow-wrap: anywhere; }
 th { background: #f3f2ef; }
 code { font-family: 'DejaVu Sans Mono', monospace; font-size: 8.5pt; background: #f3f2ef; padding: 0 2pt; }
 pre { background: #f3f2ef; padding: 6pt; font-size: 8pt; white-space: pre-wrap; page-break-inside: avoid; }
