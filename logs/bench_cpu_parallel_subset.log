@@ -1,0 +1,118 @@
+{
+  "train": {
+    "shape": [
+      12180,
+      64,
+      64,
+      3
+    ],
+    "dtype": "float32",
+    "max_abs_diff": 0.0,
+    "identical_pixels": true,
+    "identical_labels": true
+  },
+  "val": {
+    "shape": [
+      2610,
+      64,
+      64,
+      3
+    ],
+    "dtype": "float32",
+    "max_abs_diff": 0.0,
+    "identical_pixels": true,
+    "identical_labels": true
+  },
+  "test": {
+    "shape": [
+      2610,
+      64,
+      64,
+      3
+    ],
+    "dtype": "float32",
+    "max_abs_diff": 0.0,
+    "identical_pixels": true,
+    "identical_labels": true
+  }
+}
+1 procesos, corrida 1/5
+  preparacion_datos_1p: 8.158 s
+1 procesos, corrida 2/5
+  preparacion_datos_1p: 8.097 s
+1 procesos, corrida 3/5
+  preparacion_datos_1p: 7.794 s
+1 procesos, corrida 4/5
+  preparacion_datos_1p: 8.018 s
+1 procesos, corrida 5/5
+  preparacion_datos_1p: 7.134 s
+2 procesos, corrida 1/5
+  preparacion_datos_2p: 4.315 s
+2 procesos, corrida 2/5
+  preparacion_datos_2p: 4.052 s
+2 procesos, corrida 3/5
+  preparacion_datos_2p: 4.070 s
+2 procesos, corrida 4/5
+  preparacion_datos_2p: 4.114 s
+2 procesos, corrida 5/5
+  preparacion_datos_2p: 4.072 s
+4 procesos, corrida 1/5
+  preparacion_datos_4p: 2.390 s
+4 procesos, corrida 2/5
+  preparacion_datos_4p: 2.379 s
+4 procesos, corrida 3/5
+  preparacion_datos_4p: 2.274 s
+4 procesos, corrida 4/5
+  preparacion_datos_4p: 2.290 s
+4 procesos, corrida 5/5
+  preparacion_datos_4p: 2.301 s
+8 procesos, corrida 1/5
+  preparacion_datos_8p: 1.476 s
+8 procesos, corrida 2/5
+  preparacion_datos_8p: 1.457 s
+8 procesos, corrida 3/5
+  preparacion_datos_8p: 1.488 s
+8 procesos, corrida 4/5
+  preparacion_datos_8p: 1.471 s
+8 procesos, corrida 5/5
+  preparacion_datos_8p: 1.450 s
+12 procesos, corrida 1/5
+  preparacion_datos_12p: 1.201 s
+12 procesos, corrida 2/5
+  preparacion_datos_12p: 1.195 s
+12 procesos, corrida 3/5
+  preparacion_datos_12p: 1.183 s
+12 procesos, corrida 4/5
+  preparacion_datos_12p: 1.187 s
+12 procesos, corrida 5/5
+  preparacion_datos_12p: 1.185 s
+16 procesos, corrida 1/5
+  preparacion_datos_16p: 1.017 s
+16 procesos, corrida 2/5
+  preparacion_datos_16p: 1.029 s
+16 procesos, corrida 3/5
+  preparacion_datos_16p: 1.051 s
+16 procesos, corrida 4/5
+  preparacion_datos_16p: 1.034 s
+16 procesos, corrida 5/5
+  preparacion_datos_16p: 1.027 s
+24 procesos, corrida 1/5
+  preparacion_datos_24p: 0.862 s
+24 procesos, corrida 2/5
+  preparacion_datos_24p: 0.846 s
+24 procesos, corrida 3/5
+  preparacion_datos_24p: 0.848 s
+24 procesos, corrida 4/5
+  preparacion_datos_24p: 0.863 s
+24 procesos, corrida 5/5
+  preparacion_datos_24p: 1.070 s
+32 procesos, corrida 1/5
+  preparacion_datos_32p: 1.073 s
+32 procesos, corrida 2/5
+  preparacion_datos_32p: 0.981 s
+32 procesos, corrida 3/5
+  preparacion_datos_32p: 1.058 s
+32 procesos, corrida 4/5
+  preparacion_datos_32p: 1.441 s
+32 procesos, corrida 5/5
+  preparacion_datos_32p: 1.381 s

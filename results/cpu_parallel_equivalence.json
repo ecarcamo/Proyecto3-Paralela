@@ -1,0 +1,38 @@
+{
+  "train": {
+    "shape": [
+      12180,
+      64,
+      64,
+      3
+    ],
+    "dtype": "float32",
+    "max_abs_diff": 0.0,
+    "identical_pixels": true,
+    "identical_labels": true
+  },
+  "val": {
+    "shape": [
+      2610,
+      64,
+      64,
+      3
+    ],
+    "dtype": "float32",
+    "max_abs_diff": 0.0,
+    "identical_pixels": true,
+    "identical_labels": true
+  },
+  "test": {
+    "shape": [
+      2610,
+      64,
+      64,
+      3
+    ],
+    "dtype": "float32",
+    "max_abs_diff": 0.0,
+    "identical_pixels": true,
+    "identical_labels": true
+  }
+}
