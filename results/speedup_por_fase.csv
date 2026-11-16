@@ -1,0 +1,5 @@
+fase,secuencial_s,optimizada_s,speedup
+Preparación de datos (CPU),10.348 ± 2.124,1.224 ± 0.255,8.45
+Entrenamiento (5 épocas),41.312 ± 1.697,12.086 ± 1.521,3.42
+Inferencia (2 610 imágenes),0.698 ± 0.083,0.668 ± 0.247,1.05
+Total del pipeline,52.358 ± 2.648,14.007 ± 1.203,3.74
