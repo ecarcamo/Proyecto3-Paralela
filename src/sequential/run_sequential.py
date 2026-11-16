@@ -1,4 +1,5 @@
 import argparse
+import time
 
 import numpy as np
 
@@ -12,6 +13,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--epochs", type=int, default=18)
     parser.add_argument("--patience", type=int, default=3)
+    parser.add_argument("--no-early-stop", action="store_true")
     args = parser.parse_args()
 
     tf = load_tensorflow("cpu")
@@ -19,23 +21,32 @@ def main():
     np.random.seed(SEED)
     ensure_dirs()
 
+    start = time.perf_counter()
     classes, files, labels = list_images(DATA_DIR / "subset")
     splits = split_dataset(files, labels)
     data = load_splits(splits, classes)
+    preparation = time.perf_counter() - start
     X_train, y_train = data["train"]
     X_val, y_val = data["val"]
     X_test, y_test = data["test"]
     print("Entrenamiento:", X_train.shape, "Validación:", X_val.shape, "Prueba:", X_test.shape)
 
     model = compile_model(build_cnn_base(), LEARNING_RATE)
-    early_stop = tf.keras.callbacks.EarlyStopping(
-        monitor="val_loss", patience=args.patience, restore_best_weights=True
-    )
+    callbacks = [] if args.no_early_stop else [
+        tf.keras.callbacks.EarlyStopping(monitor="val_loss", patience=args.patience, restore_best_weights=True)
+    ]
+    start = time.perf_counter()
     model.fit(X_train, y_train, validation_data=(X_val, y_val), batch_size=BATCH_SIZE,
-              epochs=args.epochs, callbacks=[early_stop], verbose=2)
+              epochs=args.epochs, callbacks=callbacks, verbose=2)
+    training = time.perf_counter() - start
 
-    test_loss, test_acc = model.evaluate(X_test, y_test, verbose=0)
-    print(f"CNN base en CPU, accuracy en prueba: {test_acc:.4f}, loss: {test_loss:.4f}")
+    start = time.perf_counter()
+    probabilities = model.predict(X_test, batch_size=256, verbose=0)
+    inference = time.perf_counter() - start
+    accuracy = float((probabilities.argmax(axis=1) == y_test).mean())
+
+    print(f"CNN base en CPU, accuracy en prueba: {accuracy:.4f}")
+    print(f"Tiempos (s): preparación {preparation:.2f} · entrenamiento {training:.2f} · inferencia {inference:.2f}")
     model.save(MODELS_DIR / "cnn_base_cpu.keras")
 
 
