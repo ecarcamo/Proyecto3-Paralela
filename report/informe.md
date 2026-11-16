@@ -204,3 +204,25 @@ Los monitores de las corridas medidas confirman lo mismo con todas las muestras:
 ![Uso de GPU](../figures/05_uso_gpu_entrenamiento.png)
 
 ## 8. Discusión técnica
+
+### 8.1 ¿Por qué es más eficiente procesar las imágenes con los múltiples núcleos del CPU y delegar exclusivamente la matemática de la red neuronal a la GPU?
+
+Porque cada tipo de trabajo encaja con un hardware distinto:
+
+* **Los archivos viven en el CPU.** Los JPG están en el disco y en la caché de páginas del sistema operativo, que
+  pertenece al CPU. Para que la GPU los procesara habría que copiarlos por PCIe, sin reducir ni normalizar: 120 000
+  bytes por imagen en vez de 12 288, casi 10 veces más tráfico por un bus que en nuestras mediciones da 5.5–5.8 GB/s.
+* **Decodificar un JPEG es trabajo irregular.** Implica decodificación Huffman (secuencial dentro de cada imagen),
+  muchas ramas y acceso a tablas, todo hecho por libjpeg a través de PIL. Los núcleos del CPU, con predicción de saltos
+  y cachés grandes, ejecutan bien ese código. En la GPU, los 32 hilos de un warp tendrían que seguir caminos distintos
+  (divergencia) y se perdería el paralelismo.
+* **El paralelismo natural de esta fase es de tareas, no de datos.** Hay 17 400 imágenes independientes, cada una con
+  ~0.6 ms de trabajo. Eso se reparte perfecto entre 24 procesos: la preparación pasó de 10.35 s a 1.04 s (**×9.9**),
+  con 21 núcleos por encima del 50 % de uso en lugar de 1. Con hilos no se logra, porque el GIL de Python los
+  serializa.
+* **La red neuronal es exactamente al revés.** 42.3 M multiplicaciones-sumas idénticas por imagen, organizadas en
+  tensores regulares: paralelismo de datos masivo, justo para lo que existen los miles de hilos CUDA y los
+  *tensor cores*. En el CPU, ni con 32 hilos el entrenamiento pasa de ×4.0 respecto a un hilo.
+* **Así los dos trabajan a la vez.** Con `tf.data` y `prefetch`, el CPU prepara el siguiente batch mientras la GPU
+  calcula el actual. Durante el entrenamiento en GPU el CPU queda casi libre (6 % de uso promedio) y la GPU recibe
+  tensores listos. Si todo se hiciera en un solo dispositivo, uno de los dos estaría ocioso.
