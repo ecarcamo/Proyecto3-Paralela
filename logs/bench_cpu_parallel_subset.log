@@ -1,3 +1,131 @@
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_5e607944': [Errno 2] No such file or directory: '/psm_5e607944'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_5e607944': [Errno 2] No such file or directory: '/psm_5e607944'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_5e607944': [Errno 2] No such file or directory: '/psm_5e607944'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_5e607944': [Errno 2] No such file or directory: '/psm_5e607944'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_5e607944': [Errno 2] No such file or directory: '/psm_5e607944'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_5e607944': [Errno 2] No such file or directory: '/psm_5e607944'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_5e607944': [Errno 2] No such file or directory: '/psm_5e607944'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_5e607944': [Errno 2] No such file or directory: '/psm_5e607944'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_5e607944': [Errno 2] No such file or directory: '/psm_5e607944'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_5e607944': [Errno 2] No such file or directory: '/psm_5e607944'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_5e607944': [Errno 2] No such file or directory: '/psm_5e607944'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_5e607944': [Errno 2] No such file or directory: '/psm_5e607944'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_5e607944': [Errno 2] No such file or directory: '/psm_5e607944'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_5e607944': [Errno 2] No such file or directory: '/psm_5e607944'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_5e607944': [Errno 2] No such file or directory: '/psm_5e607944'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_5e607944': [Errno 2] No such file or directory: '/psm_5e607944'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_5e607944': [Errno 2] No such file or directory: '/psm_5e607944'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_5e607944': [Errno 2] No such file or directory: '/psm_5e607944'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_5e607944': [Errno 2] No such file or directory: '/psm_5e607944'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_5e607944': [Errno 2] No such file or directory: '/psm_5e607944'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_5e607944': [Errno 2] No such file or directory: '/psm_5e607944'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_5e607944': [Errno 2] No such file or directory: '/psm_5e607944'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_5e607944': [Errno 2] No such file or directory: '/psm_5e607944'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_5e607944': [Errno 2] No such file or directory: '/psm_5e607944'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_5e607944': [Errno 2] No such file or directory: '/psm_5e607944'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_5e607944': [Errno 2] No such file or directory: '/psm_5e607944'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_5e607944': [Errno 2] No such file or directory: '/psm_5e607944'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_5e607944': [Errno 2] No such file or directory: '/psm_5e607944'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_5e607944': [Errno 2] No such file or directory: '/psm_5e607944'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_5e607944': [Errno 2] No such file or directory: '/psm_5e607944'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_5e607944': [Errno 2] No such file or directory: '/psm_5e607944'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_5e607944': [Errno 2] No such file or directory: '/psm_5e607944'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
 {
   "train": {
     "shape": [
@@ -37,82 +165,82 @@
   }
 }
 1 procesos, corrida 1/5
-  preparacion_datos_1p: 8.158 s
+  preparacion_datos_1p: 7.602 s
 1 procesos, corrida 2/5
-  preparacion_datos_1p: 8.097 s
+  preparacion_datos_1p: 7.411 s
 1 procesos, corrida 3/5
-  preparacion_datos_1p: 7.794 s
+  preparacion_datos_1p: 7.850 s
 1 procesos, corrida 4/5
-  preparacion_datos_1p: 8.018 s
+  preparacion_datos_1p: 7.542 s
 1 procesos, corrida 5/5
-  preparacion_datos_1p: 7.134 s
+  preparacion_datos_1p: 8.001 s
 2 procesos, corrida 1/5
-  preparacion_datos_2p: 4.315 s
+  preparacion_datos_2p: 4.264 s
 2 procesos, corrida 2/5
-  preparacion_datos_2p: 4.052 s
+  preparacion_datos_2p: 4.328 s
 2 procesos, corrida 3/5
-  preparacion_datos_2p: 4.070 s
+  preparacion_datos_2p: 4.265 s
 2 procesos, corrida 4/5
-  preparacion_datos_2p: 4.114 s
+  preparacion_datos_2p: 4.265 s
 2 procesos, corrida 5/5
-  preparacion_datos_2p: 4.072 s
+  preparacion_datos_2p: 4.165 s
 4 procesos, corrida 1/5
-  preparacion_datos_4p: 2.390 s
+  preparacion_datos_4p: 2.374 s
 4 procesos, corrida 2/5
-  preparacion_datos_4p: 2.379 s
+  preparacion_datos_4p: 2.540 s
 4 procesos, corrida 3/5
-  preparacion_datos_4p: 2.274 s
+  preparacion_datos_4p: 2.436 s
 4 procesos, corrida 4/5
-  preparacion_datos_4p: 2.290 s
+  preparacion_datos_4p: 2.533 s
 4 procesos, corrida 5/5
-  preparacion_datos_4p: 2.301 s
+  preparacion_datos_4p: 2.435 s
 8 procesos, corrida 1/5
-  preparacion_datos_8p: 1.476 s
+  preparacion_datos_8p: 1.701 s
 8 procesos, corrida 2/5
-  preparacion_datos_8p: 1.457 s
+  preparacion_datos_8p: 1.743 s
 8 procesos, corrida 3/5
-  preparacion_datos_8p: 1.488 s
+  preparacion_datos_8p: 1.590 s
 8 procesos, corrida 4/5
-  preparacion_datos_8p: 1.471 s
+  preparacion_datos_8p: 1.731 s
 8 procesos, corrida 5/5
-  preparacion_datos_8p: 1.450 s
+  preparacion_datos_8p: 1.525 s
 12 procesos, corrida 1/5
-  preparacion_datos_12p: 1.201 s
+  preparacion_datos_12p: 1.497 s
 12 procesos, corrida 2/5
-  preparacion_datos_12p: 1.195 s
+  preparacion_datos_12p: 1.323 s
 12 procesos, corrida 3/5
-  preparacion_datos_12p: 1.183 s
+  preparacion_datos_12p: 1.375 s
 12 procesos, corrida 4/5
-  preparacion_datos_12p: 1.187 s
+  preparacion_datos_12p: 1.419 s
 12 procesos, corrida 5/5
-  preparacion_datos_12p: 1.185 s
+  preparacion_datos_12p: 1.398 s
 16 procesos, corrida 1/5
-  preparacion_datos_16p: 1.017 s
+  preparacion_datos_16p: 1.467 s
 16 procesos, corrida 2/5
-  preparacion_datos_16p: 1.029 s
+  preparacion_datos_16p: 1.268 s
 16 procesos, corrida 3/5
-  preparacion_datos_16p: 1.051 s
+  preparacion_datos_16p: 1.231 s
 16 procesos, corrida 4/5
-  preparacion_datos_16p: 1.034 s
+  preparacion_datos_16p: 1.148 s
 16 procesos, corrida 5/5
-  preparacion_datos_16p: 1.027 s
+  preparacion_datos_16p: 1.323 s
 24 procesos, corrida 1/5
-  preparacion_datos_24p: 0.862 s
+  preparacion_datos_24p: 1.103 s
 24 procesos, corrida 2/5
-  preparacion_datos_24p: 0.846 s
+  preparacion_datos_24p: 1.055 s
 24 procesos, corrida 3/5
-  preparacion_datos_24p: 0.848 s
+  preparacion_datos_24p: 1.055 s
 24 procesos, corrida 4/5
-  preparacion_datos_24p: 0.863 s
+  preparacion_datos_24p: 1.002 s
 24 procesos, corrida 5/5
-  preparacion_datos_24p: 1.070 s
+  preparacion_datos_24p: 0.993 s
 32 procesos, corrida 1/5
-  preparacion_datos_32p: 1.073 s
+  preparacion_datos_32p: 1.056 s
 32 procesos, corrida 2/5
-  preparacion_datos_32p: 0.981 s
+  preparacion_datos_32p: 1.043 s
 32 procesos, corrida 3/5
-  preparacion_datos_32p: 1.058 s
+  preparacion_datos_32p: 0.996 s
 32 procesos, corrida 4/5
-  preparacion_datos_32p: 1.441 s
+  preparacion_datos_32p: 0.993 s
 32 procesos, corrida 5/5
-  preparacion_datos_32p: 1.381 s
+  preparacion_datos_32p: 0.990 s

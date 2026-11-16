@@ -61,64 +61,76 @@ normalización con NumPy.
 
 ## 3.3 Resultados
 
-`benchmarks/bench_cpu_parallel.py`: 5 corridas por cantidad de procesos, con la misma pasada de calentamiento de la
-caché de disco que la medición secuencial. El tiempo incluye crear el pool, decodificar, copiar y normalizar.
+`benchmarks/bench_cpu_parallel.py`, ejecutado en la corrida final de `scripts/run_all_benchmarks.sh`: 5 corridas por
+cantidad de procesos (3 en el dataset completo), con la misma pasada de calentamiento de la caché de disco que la
+medición secuencial. El tiempo incluye crear el pool, decodificar, copiar y normalizar.
 
 ### Submuestra del laboratorio (17 400 imágenes)
 
-| Procesos | Tiempo (s) | Speedup vs. 1 proceso | Eficiencia | Speedup vs. `load_set` secuencial (8.125 s) |
+| Procesos | Tiempo (s) | Speedup vs. 1 proceso | Eficiencia | Speedup vs. `load_set` secuencial (10.348 s) |
 |---|---|---|---|---|
-| 1 | 7.840 ± 0.418 | 1.00 | 1.00 | 1.04 |
-| 2 | 4.125 ± 0.109 | 1.90 | 0.95 | 1.97 |
-| 4 | 2.327 ± 0.054 | 3.37 | 0.84 | 3.49 |
-| 8 | 1.468 ± 0.015 | 5.34 | 0.67 | 5.53 |
-| 12 | 1.190 ± 0.008 | 6.59 | 0.55 | 6.83 |
-| 16 | 1.032 ± 0.012 | 7.60 | 0.47 | 7.87 |
-| **24** | **0.898 ± 0.097** | **8.73** | **0.36** | **9.05** |
-| 32 | 1.187 ± 0.209 | 6.60 | 0.21 | 6.84 |
+| 1 | 7.681 ± 0.239 | 1.00 | 1.00 | 1.35 |
+| 2 | 4.257 ± 0.059 | 1.80 | 0.90 | 2.43 |
+| 4 | 2.463 ± 0.071 | 3.12 | 0.78 | 4.20 |
+| 8 | 1.658 ± 0.096 | 4.63 | 0.58 | 6.24 |
+| 12 | 1.402 ± 0.064 | 5.48 | 0.46 | 7.38 |
+| 16 | 1.287 ± 0.119 | 5.97 | 0.37 | 8.04 |
+| **24** | **1.042 ± 0.045** | **7.37** | **0.31** | **9.93** |
+| 32 | 1.016 ± 0.031 | 7.56 | 0.24 | 10.19 |
 
 ### Dataset completo (87 000 imágenes)
 
 | Procesos | Tiempo (s) | Speedup vs. 1 proceso |
 |---|---|---|
-| 1 | 39.836 ± 1.415 | 1.00 |
-| 4 | 12.663 ± 0.747 | 3.15 |
-| 8 | 7.718 ± 0.132 | 5.16 |
-| 16 | 5.217 ± 0.116 | 7.64 |
-| **24** | **4.323 ± 0.085** | **9.22** |
-| 32 | 4.673 ± 0.359 | 8.52 |
+| 1 | 35.704 ± 2.029 | 1.00 |
+| 4 | 11.177 ± 0.183 | 3.19 |
+| 8 | 6.930 ± 0.235 | 5.15 |
+| 16 | 4.687 ± 0.200 | 7.62 |
+| **24** | **3.772 ± 0.106** | **9.47** |
+| 32 | 4.048 ± 0.149 | 8.82 |
 
-Uso del CPU durante la carga (monitor de núcleos, `logs/cpu_parallel_subset.csv`):
+Uso del CPU durante la carga (monitor de núcleos, `logs/cpu_parallel_subset.csv`; captura de `btop` en
+`evidence/02_paralela_carga_24_procesos.png`):
 
 | Procesos | Uso promedio por núcleo | Núcleos con más de 50 % |
 |---|---|---|
-| 1 | 4.4 % | 0 |
-| 8 | 23.4 % | 6 |
-| 24 | 53.7 % | 21 |
-| 32 | 64.7 % | 32 |
+| 1 | 4.2 % | 0 |
+| 8 | 21.2 % | 3 |
+| 24 | 49.5 % | 21 |
+| 32 | 59.8 % | 32 |
+
+Dentro del pipeline completo (`bench_training`), el pool se crea una vez al inicio del programa, antes de cargar
+TensorFlow, y se reutiliza. Ahí la preparación entrega `uint8` sin normalizar (la normalización la hace `tf.data`) y
+tarda 1.224 ± 0.255 s.
 
 ## 3.4 Análisis
 
-* **El óptimo está en 24 procesos, uno por núcleo físico.** Pasar a 32 empeora: los 8 hilos extra son
-  *hyper-threads* de los núcleos P, que comparten unidades de ejecución y caché, y la contención es mayor que la
-  ganancia.
+* **El óptimo está en 24 procesos, uno por núcleo físico.** Con 32 el tiempo es prácticamente igual en la submuestra
+  (1.016 contra 1.042 s, dentro de la desviación) y peor en el dataset completo (4.05 contra 3.77 s). Los 8 hilos
+  extra son *hyper-threads* de los núcleos P, que comparten unidades de ejecución y caché: agregan contención casi sin
+  agregar cómputo. Por eso `default_workers()` usa la cantidad de núcleos físicos.
 * **La eficiencia cae porque los núcleos no son iguales y hay trabajo que no se reparte.** Los 16 núcleos E rinden
   bastante menos que los 8 P, así que 24 procesos no equivalen a 24 «núcleos P». Además, crear el pool, copiar el
   bloque compartido y normalizar ocurren en el proceso principal (ley de Amdahl). Con el dataset completo el trabajo
-  fijo pesa menos y el speedup sube a 9.2×.
-* **`spawn` contra `fork`.** La primera versión usaba `spawn`, y 32 procesos tardaban **9.2 s**, más que la versión
+  fijo pesa menos y el speedup sube a 9.5×.
+* **Hay variación por temperatura.** El CPU estuvo entre 90 y 96 °C durante las mediciones; la carga secuencial tuvo
+  una corrida de 14.1 s. Por eso el speedup contra la versión secuencial (×9.93) es algo mayor que contra el mismo
+  código con 1 proceso (×7.37).
+* **`spawn` contra `fork`.** La primera versión usaba `spawn`, y 32 procesos tardaban **9.6 s**, igual que la versión
   secuencial (`results/cpu_parallel_subset_spawn.csv`). Con `spawn`, cada trabajador arranca un intérprete nuevo y
   vuelve a importar el módulo principal, con scikit-learn, NumPy y PIL incluidos. Ese costo crece con el número de
-  procesos y se come la ganancia: el mejor caso era 8 procesos con 4.8 s. Con `fork`, los trabajadores heredan la
-  memoria del padre ya inicializada y arrancan en milisegundos. En Linux esa es la opción correcta para este trabajo.
+  procesos y se come la ganancia: el mejor caso era 8 procesos con 5.0 s. Con `fork`, los trabajadores heredan la
+  memoria del padre ya inicializada y arrancan en milisegundos. En Linux esa es la opción correcta para este trabajo,
+  siempre que el pool se cree **antes** de inicializar TensorFlow y CUDA: un `fork` de un proceso que ya tiene el
+  contexto CUDA copia un proceso enorme y, en nuestras pruebas, la carga subió a entre 1.3 y 5 s.
 
 | Procesos | `spawn` (s) | `fork` (s) |
 |---|---|---|
-| 1 | 9.874 | 7.840 |
-| 8 | 4.781 | 1.468 |
-| 24 | 6.849 | 0.898 |
-| 32 | 9.165 | 1.187 |
+| 1 | 9.796 | 7.681 |
+| 8 | 4.984 | 1.658 |
+| 24 | 7.102 | 1.042 |
+| 32 | 9.554 | 1.016 |
 
-Conclusión de esta parte: procesar los archivos con los núcleos del CPU reduce la preparación de datos de 8.1 s a
-0.9 s (**×9.05**). El resultado es idéntico al original y deja los datos listos para que la GPU se encargue
+Conclusión de esta parte: procesar los archivos con los núcleos del CPU reduce la preparación de datos de 10.3 s a
+1.0 s (**×9.9**). El resultado es idéntico al original y deja los datos listos para que la GPU se encargue
 únicamente de la red neuronal.
