@@ -1,0 +1,39 @@
+E0000 00:00:1794799041.622503  902948 cuda_platform.cc:52] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected
+Entrenamiento: (12180, 64, 64, 3) Validación: (2610, 64, 64, 3) Prueba: (2610, 64, 64, 3)
+Epoch 1/18
+381/381 - 8s - 21ms/step - accuracy: 0.3465 - loss: 2.2100 - val_accuracy: 0.6360 - val_loss: 1.1128
+Epoch 2/18
+381/381 - 8s - 20ms/step - accuracy: 0.7746 - loss: 0.7094 - val_accuracy: 0.8510 - val_loss: 0.4378
+Epoch 3/18
+381/381 - 7s - 19ms/step - accuracy: 0.8960 - loss: 0.3252 - val_accuracy: 0.8973 - val_loss: 0.3161
+Epoch 4/18
+381/381 - 7s - 18ms/step - accuracy: 0.9412 - loss: 0.1811 - val_accuracy: 0.9222 - val_loss: 0.2259
+Epoch 5/18
+381/381 - 7s - 19ms/step - accuracy: 0.9648 - loss: 0.1108 - val_accuracy: 0.9080 - val_loss: 0.2918
+Epoch 6/18
+381/381 - 7s - 19ms/step - accuracy: 0.9674 - loss: 0.1042 - val_accuracy: 0.9360 - val_loss: 0.2047
+Epoch 7/18
+381/381 - 7s - 19ms/step - accuracy: 0.9764 - loss: 0.0752 - val_accuracy: 0.9598 - val_loss: 0.1368
+Epoch 8/18
+381/381 - 7s - 19ms/step - accuracy: 0.9842 - loss: 0.0493 - val_accuracy: 0.9628 - val_loss: 0.1306
+Epoch 9/18
+381/381 - 7s - 19ms/step - accuracy: 0.9863 - loss: 0.0448 - val_accuracy: 0.9425 - val_loss: 0.1880
+Epoch 10/18
+381/381 - 7s - 19ms/step - accuracy: 0.9829 - loss: 0.0593 - val_accuracy: 0.9467 - val_loss: 0.1625
+Epoch 11/18
+381/381 - 7s - 19ms/step - accuracy: 0.9883 - loss: 0.0413 - val_accuracy: 0.9648 - val_loss: 0.1258
+Epoch 12/18
+381/381 - 7s - 19ms/step - accuracy: 0.9897 - loss: 0.0343 - val_accuracy: 0.9617 - val_loss: 0.1390
+Epoch 13/18
+381/381 - 7s - 19ms/step - accuracy: 0.9901 - loss: 0.0307 - val_accuracy: 0.9693 - val_loss: 0.1298
+Epoch 14/18
+381/381 - 7s - 19ms/step - accuracy: 0.9844 - loss: 0.0518 - val_accuracy: 0.9805 - val_loss: 0.0805
+Epoch 15/18
+381/381 - 7s - 19ms/step - accuracy: 0.9956 - loss: 0.0162 - val_accuracy: 0.9720 - val_loss: 0.1131
+Epoch 16/18
+381/381 - 7s - 19ms/step - accuracy: 0.9987 - loss: 0.0072 - val_accuracy: 0.9828 - val_loss: 0.0654
+Epoch 17/18
+381/381 - 7s - 19ms/step - accuracy: 0.9823 - loss: 0.0637 - val_accuracy: 0.9674 - val_loss: 0.1087
+Epoch 18/18
+381/381 - 7s - 19ms/step - accuracy: 0.9907 - loss: 0.0301 - val_accuracy: 0.9579 - val_loss: 0.1545
+CNN base en CPU, accuracy en prueba: 0.9751, loss: 0.1086
