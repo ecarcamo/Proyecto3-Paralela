@@ -1,0 +1,9 @@
+implementation,device,mixed_precision,tf_data,steps_per_execution,warmup_seconds,dataset,images,epochs,run,phase,seconds,test_accuracy
+cpu_tfdata,cpu,False,True,1,4.28045805900183,full,87000,5,0,listado_split,0.16883480000251438,0.9754789272030652
+cpu_tfdata,cpu,False,True,1,4.28045805900183,full,87000,5,0,preparacion_datos,7.1934004689974245,0.9754789272030652
+cpu_tfdata,cpu,False,True,1,4.28045805900183,full,87000,5,0,entrenamiento,195.3844860810059,0.9754789272030652
+cpu_tfdata,cpu,False,True,1,4.28045805900183,full,87000,5,0,inferencia,2.97831354799564,0.9754789272030652
+cpu_tfdata,cpu,False,True,1,4.28045805900183,full,87000,5,1,listado_split,0.18214139201154467,0.9882758620689656
+cpu_tfdata,cpu,False,True,1,4.28045805900183,full,87000,5,1,preparacion_datos,6.588474568998208,0.9882758620689656
+cpu_tfdata,cpu,False,True,1,4.28045805900183,full,87000,5,1,entrenamiento,191.17572898700018,0.9882758620689656
+cpu_tfdata,cpu,False,True,1,4.28045805900183,full,87000,5,1,inferencia,3.055828605007264,0.9882758620689656

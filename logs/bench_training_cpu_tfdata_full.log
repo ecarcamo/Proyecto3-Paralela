@@ -1,0 +1,161 @@
+cpu_tfdata (full), corrida 1/2
+  listado_split: 0.169 s
+  preparacion_datos: 7.193 s
+/home/escu/Documentos/Universidad/Semestres/8voSemestre/PARALELA/Proyecto3-Paralela/.venv/lib/python3.11/site-packages/keras/src/trainers/epoch_iterator.py:74: UserWarning: `shuffle=True` was passed, but will be ignored since the data `x` was provided as a tf.data.Dataset. The Dataset is expected to already be shuffled (via `.shuffle(buffer_size)`).
+  self.data_adapter = data_adapters.get_data_adapter(
+  calentamiento (inicialización CUDA/cuDNN, no se mide): 4.280 s
+  entrenamiento: 195.384 s
+  inferencia: 2.978 s
+  accuracy prueba: 0.9755
+cpu_tfdata (full), corrida 2/2
+  listado_split: 0.182 s
+  preparacion_datos: 6.588 s
+/home/escu/Documentos/Universidad/Semestres/8voSemestre/PARALELA/Proyecto3-Paralela/.venv/lib/python3.11/site-packages/keras/src/trainers/epoch_iterator.py:74: UserWarning: `shuffle=True` was passed, but will be ignored since the data `x` was provided as a tf.data.Dataset. The Dataset is expected to already be shuffled (via `.shuffle(buffer_size)`).
+  self.data_adapter = data_adapters.get_data_adapter(
+  entrenamiento: 191.176 s
+  inferencia: 3.056 s
+  accuracy prueba: 0.9883
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 2 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 2 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 2 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 2 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 2 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 2 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 2 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_69bd57a0': [Errno 2] No such file or directory: '/psm_69bd57a0'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_9f512280': [Errno 2] No such file or directory: '/psm_9f512280'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_69bd57a0': [Errno 2] No such file or directory: '/psm_69bd57a0'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_9f512280': [Errno 2] No such file or directory: '/psm_9f512280'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_69bd57a0': [Errno 2] No such file or directory: '/psm_69bd57a0'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_9f512280': [Errno 2] No such file or directory: '/psm_9f512280'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 2 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_9f512280': [Errno 2] No such file or directory: '/psm_9f512280'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_69bd57a0': [Errno 2] No such file or directory: '/psm_69bd57a0'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_69bd57a0': [Errno 2] No such file or directory: '/psm_69bd57a0'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_9f512280': [Errno 2] No such file or directory: '/psm_9f512280'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 2 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_9f512280': [Errno 2] No such file or directory: '/psm_9f512280'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 2 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 2 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 2 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 2 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 2 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 2 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 2 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 2 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 2 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 2 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 2 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 2 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_69bd57a0': [Errno 2] No such file or directory: '/psm_69bd57a0'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_69bd57a0': [Errno 2] No such file or directory: '/psm_69bd57a0'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_9f512280': [Errno 2] No such file or directory: '/psm_9f512280'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_69bd57a0': [Errno 2] No such file or directory: '/psm_69bd57a0'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_9f512280': [Errno 2] No such file or directory: '/psm_9f512280'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_69bd57a0': [Errno 2] No such file or directory: '/psm_69bd57a0'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_9f512280': [Errno 2] No such file or directory: '/psm_9f512280'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_69bd57a0': [Errno 2] No such file or directory: '/psm_69bd57a0'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_9f512280': [Errno 2] No such file or directory: '/psm_9f512280'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_9f512280': [Errno 2] No such file or directory: '/psm_9f512280'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_9f512280': [Errno 2] No such file or directory: '/psm_9f512280'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_69bd57a0': [Errno 2] No such file or directory: '/psm_69bd57a0'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_69bd57a0': [Errno 2] No such file or directory: '/psm_69bd57a0'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_9f512280': [Errno 2] No such file or directory: '/psm_9f512280'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_9f512280': [Errno 2] No such file or directory: '/psm_9f512280'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_69bd57a0': [Errno 2] No such file or directory: '/psm_69bd57a0'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_69bd57a0': [Errno 2] No such file or directory: '/psm_69bd57a0'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_69bd57a0': [Errno 2] No such file or directory: '/psm_69bd57a0'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_69bd57a0': [Errno 2] No such file or directory: '/psm_69bd57a0'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_9f512280': [Errno 2] No such file or directory: '/psm_9f512280'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_9f512280': [Errno 2] No such file or directory: '/psm_9f512280'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_69bd57a0': [Errno 2] No such file or directory: '/psm_69bd57a0'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_69bd57a0': [Errno 2] No such file or directory: '/psm_69bd57a0'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_9f512280': [Errno 2] No such file or directory: '/psm_9f512280'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_9f512280': [Errno 2] No such file or directory: '/psm_9f512280'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_9f512280': [Errno 2] No such file or directory: '/psm_9f512280'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_69bd57a0': [Errno 2] No such file or directory: '/psm_69bd57a0'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_9f512280': [Errno 2] No such file or directory: '/psm_9f512280'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_9f512280': [Errno 2] No such file or directory: '/psm_9f512280'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_69bd57a0': [Errno 2] No such file or directory: '/psm_69bd57a0'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_69bd57a0': [Errno 2] No such file or directory: '/psm_69bd57a0'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 2 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_9f512280': [Errno 2] No such file or directory: '/psm_9f512280'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_69bd57a0': [Errno 2] No such file or directory: '/psm_69bd57a0'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 2 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_69bd57a0': [Errno 2] No such file or directory: '/psm_69bd57a0'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_9f512280': [Errno 2] No such file or directory: '/psm_9f512280'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 2 leaked shared_memory objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_9f512280': [Errno 2] No such file or directory: '/psm_9f512280'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))
+/home/escu/.local/share/mise/installs/python/3.11.15/lib/python3.11/multiprocessing/resource_tracker.py:267: UserWarning: resource_tracker: '/psm_69bd57a0': [Errno 2] No such file or directory: '/psm_69bd57a0'
+  warnings.warn('resource_tracker: %r: %s' % (name, e))

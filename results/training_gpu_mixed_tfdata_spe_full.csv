@@ -1,0 +1,16 @@
+implementation,device,mixed_precision,tf_data,steps_per_execution,warmup_seconds,dataset,images,epochs,run,phase,seconds,test_accuracy
+gpu_mixed_tfdata_spe,gpu,True,True,32,12.51392288900388,full,87000,5,0,listado_split,0.17297285598760936,0.9748659003831418
+gpu_mixed_tfdata_spe,gpu,True,True,32,12.51392288900388,full,87000,5,0,preparacion_datos,6.203415341005893,0.9748659003831418
+gpu_mixed_tfdata_spe,gpu,True,True,32,12.51392288900388,full,87000,5,0,transferencia_h2d,0.35426898700825404,0.9748659003831418
+gpu_mixed_tfdata_spe,gpu,True,True,32,12.51392288900388,full,87000,5,0,entrenamiento,43.019751019004616,0.9748659003831418
+gpu_mixed_tfdata_spe,gpu,True,True,32,12.51392288900388,full,87000,5,0,inferencia,1.690530765990843,0.9748659003831418
+gpu_mixed_tfdata_spe,gpu,True,True,32,12.51392288900388,full,87000,5,1,listado_split,0.24558196400175802,0.9952490421455938
+gpu_mixed_tfdata_spe,gpu,True,True,32,12.51392288900388,full,87000,5,1,preparacion_datos,9.006886552000651,0.9952490421455938
+gpu_mixed_tfdata_spe,gpu,True,True,32,12.51392288900388,full,87000,5,1,transferencia_h2d,0.28700752698932774,0.9952490421455938
+gpu_mixed_tfdata_spe,gpu,True,True,32,12.51392288900388,full,87000,5,1,entrenamiento,36.904107369991834,0.9952490421455938
+gpu_mixed_tfdata_spe,gpu,True,True,32,12.51392288900388,full,87000,5,1,inferencia,1.708372856999631,0.9952490421455938
+gpu_mixed_tfdata_spe,gpu,True,True,32,12.51392288900388,full,87000,5,2,listado_split,0.1789179939951282,0.9928735632183908
+gpu_mixed_tfdata_spe,gpu,True,True,32,12.51392288900388,full,87000,5,2,preparacion_datos,8.445159745999263,0.9928735632183908
+gpu_mixed_tfdata_spe,gpu,True,True,32,12.51392288900388,full,87000,5,2,transferencia_h2d,0.37333682099415455,0.9928735632183908
+gpu_mixed_tfdata_spe,gpu,True,True,32,12.51392288900388,full,87000,5,2,entrenamiento,37.3312579409976,0.9928735632183908
+gpu_mixed_tfdata_spe,gpu,True,True,32,12.51392288900388,full,87000,5,2,inferencia,1.7127361110033235,0.9928735632183908
