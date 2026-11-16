@@ -1,0 +1,47 @@
+{
+  "python": "3.11.15",
+  "os": "Linux-7.3.3-1-cachyos-x86_64-with-glibc2.44",
+  "cpu": {
+    "model": "13th Gen Intel(R) Core(TM) i9-13980HX",
+    "physical_cores": 24,
+    "logical_cores": 32,
+    "ram_gb": 15.2
+  },
+  "gpu": {
+    "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+    "driver_version": "620.70.06",
+    "memory.total": "6141 MiB",
+    "power.limit": "[N/A]",
+    "clocks.max.sm": "3105 MHz"
+  },
+  "tensorflow": {
+    "version": "2.21.0",
+    "cuda_build": "12.5.1",
+    "cudnn_build": "9",
+    "gpus": [
+      "/physical_device:GPU:0"
+    ],
+    "gpu_details": [
+      {
+        "compute_capability": [
+          8,
+          9
+        ],
+        "device_name": "NVIDIA GeForce RTX 4050 Laptop GPU"
+      }
+    ]
+  },
+  "numba": {
+    "version": "0.68.1",
+    "device": {
+      "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+      "compute_capability": "8.9",
+      "multiprocessors": 20,
+      "max_threads_per_block": 1024,
+      "warp_size": 32,
+      "max_shared_memory_per_block": 49152,
+      "memory_total_mb": 5822,
+      "memory_free_mb": 5733
+    }
+  }
+}
