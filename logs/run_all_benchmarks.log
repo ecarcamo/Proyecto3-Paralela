@@ -1,0 +1,14 @@
+== 22:41:31 -m src.env_check
+== 22:41:41 -m benchmarks.bench_sequential --repeats 5 --epochs 5
+== 22:46:25 -m benchmarks.bench_sequential --repeats 3 --epochs 5 --threads 1
+== 22:55:36 -m benchmarks.bench_cpu_parallel --repeats 5
+== 22:57:40 -m benchmarks.bench_cpu_parallel --start-method spawn --repeats 3
+== 23:00:36 -m benchmarks.bench_cpu_parallel --full --workers 1,4,8,16,24,32 --repeats 3
+== 23:04:03 -m benchmarks.bench_training --variant gpu_fp32 --save-model
+== 23:06:11 -m benchmarks.bench_training --variant gpu_fp32_tfdata
+== 23:07:58 -m benchmarks.bench_training --variant gpu_mixed_tfdata
+== 23:09:35 -m benchmarks.bench_training --variant gpu_mixed_tfdata_spe
+== 23:11:05 -m benchmarks.bench_training --variant gpu_mixed_tfdata_spe --dataset full --repeats 3
+== 23:14:10 -m benchmarks.bench_training --variant cpu_tfdata --dataset full --repeats 2
+== 23:21:13 -m benchmarks.bench_kernels
+== 23:23:01 listo

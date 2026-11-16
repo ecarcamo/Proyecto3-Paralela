@@ -1,18 +1,18 @@
 Corrida 1/3
-  listado_split: 0.018 s
-  preparacion_datos: 7.254 s
-  entrenamiento: 155.304 s
-  inferencia: 2.113 s
-  accuracy prueba: 0.9192
-Corrida 2/3
   listado_split: 0.022 s
-  preparacion_datos: 7.680 s
-  entrenamiento: 150.019 s
-  inferencia: 1.928 s
-  accuracy prueba: 0.9421
+  preparacion_datos: 8.158 s
+  entrenamiento: 166.743 s
+  inferencia: 2.611 s
+  accuracy prueba: 0.9368
+Corrida 2/3
+  listado_split: 0.038 s
+  preparacion_datos: 13.000 s
+  entrenamiento: 163.687 s
+  inferencia: 2.066 s
+  accuracy prueba: 0.9253
 Corrida 3/3
-  listado_split: 0.020 s
-  preparacion_datos: 7.465 s
-  entrenamiento: 150.915 s
-  inferencia: 1.930 s
-  accuracy prueba: 0.9364
+  listado_split: 0.025 s
+  preparacion_datos: 7.938 s
+  entrenamiento: 163.194 s
+  inferencia: 2.046 s
+  accuracy prueba: 0.9031

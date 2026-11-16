@@ -90,25 +90,28 @@ Se corrieron dos configuraciones:
 
 ## 2.2 Resultados
 
-Tiempos en segundos (promedio ± desviación estándar). Fuente: `results/sequential_runs.csv` y
-`results/sequential_runs_1thread.csv`.
+Tiempos en segundos (promedio ± desviación estándar) de la corrida final de `scripts/run_all_benchmarks.sh`. Fuente:
+`results/sequential_runs.csv` y `results/sequential_runs_1thread.csv`.
 
-| Fase | Original (32 hilos TF) | Estrictamente secuencial (1 hilo) |
+| Fase | Original (32 hilos TF, 5 corridas) | Estrictamente secuencial (1 hilo, 3 corridas) |
 |---|---|---|
-| Listado + split | 0.025 ± 0.003 | 0.020 ± 0.002 |
-| Preparación de datos (17 400 imágenes) | 8.125 ± 0.634 | 7.466 ± 0.213 |
-| Entrenamiento (5 épocas, 12 180 imágenes) | 36.800 ± 0.694 | 152.079 ± 2.828 |
-| Inferencia (2 610 imágenes) | 0.588 ± 0.005 | 1.990 ± 0.107 |
-| **Total** | **45.54 ± 0.65** | **161.56** |
-| Accuracy en prueba | 0.928 ± 0.021 | 0.933 ± 0.012 |
+| Listado + split | 0.026 ± 0.007 | 0.028 ± 0.008 |
+| Preparación de datos (17 400 imágenes) | 10.348 ± 2.124 | 9.699 ± 2.861 |
+| Entrenamiento (5 épocas, 12 180 imágenes) | 41.312 ± 1.697 | 164.541 ± 1.922 |
+| Inferencia (2 610 imágenes) | 0.698 ± 0.083 | 2.241 ± 0.320 |
+| **Total** | **52.38 ± 2.65** | **176.51 ± 2.93** |
+| Accuracy en prueba | 0.933 ± 0.006 | 0.922 ± 0.017 |
 
-Uso del CPU medido por el monitor (promedio de los 32 núcleos lógicos durante la fase):
+Uso del CPU medido por el monitor (promedio de los 32 núcleos lógicos durante la fase, `logs/cpu_sequential*.csv`):
 
 | Fase | Uso promedio por núcleo | Núcleos con más de 50 % | Núcleos equivalentes ocupados |
 |---|---|---|---|
-| Preparación de datos | 5.0 % | 0 | ≈ 1.6 |
-| Entrenamiento (original) | 59.3 % | 32 | ≈ 19 |
-| Entrenamiento (1 hilo) | 4.4 % | 0 | ≈ 1.4 |
+| Preparación de datos | 4.9 % | 0 | ≈ 1.6 |
+| Entrenamiento (original) | 59.6 % | 32 | ≈ 19 |
+| Entrenamiento (1 hilo) | 5.1 % | 0 | ≈ 1.6 |
+
+`evidence/01_secuencial_carga_un_nucleo.png` y `evidence/03_secuencial_entrenamiento_cpu.png` son capturas de `btop`
+tomadas mientras corrían esas fases. En la primera solo un núcleo trabaja; en la segunda trabajan todos.
 
 Con una corrida completa sin límite de épocas (`run_sequential.py`, paro temprano con paciencia 3, 18 épocas) la CNN
 llega a **0.9751** de accuracy en prueba (`logs/sequential_original_run.log`). Es coherente con el 0.9467 reportado en
@@ -118,12 +121,12 @@ el laboratorio, que se había corrido en otra máquina.
 
 * **La preparación de datos usa un solo núcleo.** El `for` de `load_set` procesa una imagen a la vez en el hilo
   principal de Python. El monitor muestra el equivalente a 1.6 núcleos ocupados de 32: uno por el bucle y el resto por
-  ruido del sistema. Cuesta ~0.47 ms por imagen, sobre todo por la decodificación JPEG y el redimensionamiento
-  bicúbico. Son 8 s que no dependen de la red neuronal y que los otros 23 núcleos físicos podrían repartirse.
-* **El entrenamiento domina el tiempo total** (81 % en la versión original y 94 % con un hilo). Son 1 905 pasos de
+  ruido del sistema. Cuesta ~0.6 ms por imagen, sobre todo por la decodificación JPEG y el redimensionamiento
+  bicúbico. Son 10 s que no dependen de la red neuronal y que los otros 23 núcleos físicos podrían repartirse.
+* **El entrenamiento domina el tiempo total** (79 % en la versión original y 93 % con un hilo). Son 1 905 pasos de
   optimización, cada uno con ~127 M MAC por imagen entre propagación hacia adelante y hacia atrás.
-* **TensorFlow ya paraleliza en CPU.** Pasar de 1 a 32 hilos acelera el entrenamiento ×4.1 (152 s → 36.8 s), muy lejos
-  de ×32: los batches de 32 imágenes son pequeños, los 16 núcleos E son más lentos que los 8 P y la memoria es
+* **TensorFlow ya paraleliza en CPU.** Pasar de 1 a 32 hilos acelera el entrenamiento ×4.0 (164.5 s → 41.3 s), muy
+  lejos de ×32: los batches de 32 imágenes son pequeños, los 16 núcleos E son más lentos que los 8 P y la memoria es
   compartida. Por eso, para la comparación final contra la GPU se usa la versión original (32 hilos) como
   referencia: es la más rápida en CPU y no infla el speedup.
 
@@ -131,9 +134,9 @@ Factores que influyen en el rendimiento medido:
 
 | Factor | Efecto observado o esperado |
 |---|---|
+| Temperatura y energía de la laptop | El CPU trabajó entre 90 y 96 °C. En una sesión de prueba previa, con la máquina más fría, el entrenamiento tardó 36.8 s en lugar de 41.3 s, y una corrida de carga llegó a 14.1 s: de ahí la desviación de ±2.1 s |
 | Caché de páginas del disco | La primera lectura de los JPG es más lenta; por eso hay una pasada de calentamiento |
 | Decodificación JPEG y `resize` en Python | Trabajo de CPU con el GIL tomado: no se paraleliza con hilos, sí con procesos |
-| Hilos de TensorFlow (oneDNN) | Aceleran el entrenamiento ×4.1, pero escalan mal en batches pequeños |
+| Hilos de TensorFlow (oneDNN) | Aceleran el entrenamiento ×4.0, pero escalan mal en batches pequeños |
 | Núcleos híbridos 8P + 16E | Los núcleos E tienen menos rendimiento; el reparto no es homogéneo |
-| Temperatura y energía de la laptop | Variación de ±2 % entre corridas de entrenamiento; las corridas largas pueden bajar frecuencia |
-| Procesos de fondo | Explican el núcleo «ocupado» en reposo; por eso se reporta la desviación estándar |
+| Procesos de fondo | Se midió con la máquina sin otras cargas pesadas; aun así hay ~1 núcleo ocupado en reposo |

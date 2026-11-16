@@ -1,31 +1,30 @@
 Corrida 1/5
-  listado_split: 0.021 s
-  preparacion_datos: 7.715 s
-E0000 00:00:1794799247.581430  910617 cuda_platform.cc:52] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected
-  entrenamiento: 37.991 s
-  inferencia: 0.585 s
-  accuracy prueba: 0.9238
+  listado_split: 0.023 s
+  preparacion_datos: 9.930 s
+  entrenamiento: 44.277 s
+  inferencia: 0.841 s
+  accuracy prueba: 0.9245
 Corrida 2/5
-  listado_split: 0.027 s
-  preparacion_datos: 8.780 s
-  entrenamiento: 36.165 s
-  inferencia: 0.594 s
-  accuracy prueba: 0.8958
+  listado_split: 0.038 s
+  preparacion_datos: 14.086 s
+  entrenamiento: 40.721 s
+  inferencia: 0.638 s
+  accuracy prueba: 0.9410
 Corrida 3/5
-  listado_split: 0.027 s
-  preparacion_datos: 7.667 s
-  entrenamiento: 36.640 s
-  inferencia: 0.584 s
-  accuracy prueba: 0.9291
+  listado_split: 0.023 s
+  preparacion_datos: 8.851 s
+  entrenamiento: 41.031 s
+  inferencia: 0.691 s
+  accuracy prueba: 0.9295
 Corrida 4/5
-  listado_split: 0.027 s
-  preparacion_datos: 8.855 s
-  entrenamiento: 36.567 s
-  inferencia: 0.591 s
-  accuracy prueba: 0.9525
+  listado_split: 0.021 s
+  preparacion_datos: 9.444 s
+  entrenamiento: 40.041 s
+  inferencia: 0.653 s
+  accuracy prueba: 0.9360
 Corrida 5/5
   listado_split: 0.024 s
-  preparacion_datos: 7.608 s
-  entrenamiento: 36.636 s
-  inferencia: 0.584 s
-  accuracy prueba: 0.9372
+  preparacion_datos: 9.430 s
+  entrenamiento: 40.487 s
+  inferencia: 0.667 s
+  accuracy prueba: 0.9349
