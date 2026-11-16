@@ -10,13 +10,10 @@ _worker_state = {}
 
 
 def _attach(name, shape):
-    if _worker_state.get("name") == name:
-        return _worker_state["pixels"]
-    previous = _worker_state.pop("buffer", None)
-    if previous is not None:
-        previous.close()
-    buffer = shared_memory.SharedMemory(name=name)
-    _worker_state.update(name=name, buffer=buffer, pixels=np.ndarray(shape, dtype=np.uint8, buffer=buffer.buf))
+    if _worker_state.get("name") != name:
+        _worker_state.clear()
+        pixels = np.memmap(f"/dev/shm/{name}", dtype=np.uint8, mode="r+", shape=shape)
+        _worker_state.update(name=name, pixels=pixels)
     return _worker_state["pixels"]
 
 
