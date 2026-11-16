@@ -226,3 +226,67 @@ Porque cada tipo de trabajo encaja con un hardware distinto:
 * **Así los dos trabajan a la vez.** Con `tf.data` y `prefetch`, el CPU prepara el siguiente batch mientras la GPU
   calcula el actual. Durante el entrenamiento en GPU el CPU queda casi libre (6 % de uso promedio) y la GPU recibe
   tensores listos. Si todo se hiciera en un solo dispositivo, uno de los dos estaría ocioso.
+
+### 8.2 ¿Cómo CUDA permitió reducir o cambiar el tiempo de procesamiento?
+
+* **Redujo el entrenamiento de 41.3 s a 12.1 s (×3.42).** Cada época pasó de 8.26 s a 2.42 s, y con el dataset
+  completo de 38.7 s a 7.8 s por época (×4.95). La GPU ejecuta en paralelo, con miles de hilos, las convoluciones y
+  productos de matrices que en el CPU se reparten entre 32 hilos como mucho. Con los kernels propios se ve en cifras:
+  la misma matemática tarda 18.7 s en NumPy y 0.29 s en CUDA (×65).
+* **El diseño de los kernels importa.** Pasar de «1 hilo = 1 salida leyendo todo de memoria global» a mosaicos en
+  memoria compartida con 8 canales por hilo duplicó la velocidad de las convoluciones (22.1 → 10.0 ms por batch). La
+  memoria global es mucho más lenta que la compartida y los registros: reutilizar cada dato cargado vale tanto como
+  tener más hilos.
+* **Los *tensor cores* y la precisión mixta** (FP16 en el cómputo, FP32 en los pesos) bajaron el entrenamiento de
+  14.9 s a 12.7 s, sin perder accuracy.
+* **CUDA también cambió dónde se va el tiempo.** En la versión secuencial el 79 % era cómputo de la red. En la
+  optimizada aparecen costos que antes no existían: inicializar CUDA/cuDNN (7.7–9.5 s por proceso), compilar los
+  kernels JIT de Numba (1.7 s), trazar el grafo y el autotuning de cuDNN (~3 s en la primera corrida). Además, el
+  overhead de Python por cada paso de entrenamiento: con batches de 32 la GPU pasa buena parte del tiempo esperando.
+  Por eso `steps_per_execution=32`, que no cambia ningún cálculo, mejoró el tiempo, y por eso la GPU solo estuvo
+  ocupada 36 % del tiempo en promedio.
+
+### 8.3 ¿Qué factores justifican o limitan la utilización de CUDA?
+
+**La justifican:**
+
+* **Volumen de cómputo regular:** 7.7 TMAC por entrenamiento de 5 épocas, todas operaciones idénticas e
+  independientes dentro de cada batch.
+* **Escala de los datos:** al pasar de 17 400 a 87 000 imágenes, el speedup sube de ×3.4 a ×4.95, porque los costos
+  fijos se amortizan. Con un modelo o imágenes más grandes la ventaja crecería más.
+* **Entrenamientos repetidos:** en el laboratorio se probaron 5 configuraciones de hiperparámetros, más el
+  re-entrenamiento con aumento de datos. Con la GPU, cada una cuesta la cuarta parte y el costo de inicializar CUDA se
+  paga una sola vez por proceso.
+
+**La limitan:**
+
+* **El modelo es pequeño** (1.1 M parámetros, imágenes de 64×64, batch de 32): no alcanza para llenar los 20 SM. La
+  GPU promedió 36 % de uso y 30 W de los 140 W disponibles. Se gasta más en lanzar kernels y despachar desde Python
+  que en calcular.
+* **Costos fijos:** inicializar CUDA/cuDNN (7.7–9.5 s), compilar JIT y trazar el grafo. Para un solo entrenamiento
+  corto se comen buena parte de la ganancia: 12.1 s de entrenamiento + 9.4 s de inicialización = 21.5 s, contra 41.3 s
+  en CPU. Sigue siendo ×1.9, pero lejos del ×3.4.
+* **Memoria de la GPU (6 GB):** el dataset completo en `float32` ocupa 4.3 GB y no cabe junto con las activaciones. Por
+  eso se guarda como `uint8` y se normaliza por batch.
+* **Transferencias por PCIe:** subir el conjunto completo cuesta menos del 1 %, pero bajar datos es lento
+  (0.56 GB/s). Un diseño que fuera y viniera entre CPU y GPU en cada paso perdería la ventaja.
+* **Partes que siguen siendo secuenciales** (ley de Amdahl): crear procesos, armar el grafo, la validación de cada
+  época y el código de Python que coordina todo.
+* **Complejidad y precisión numérica:** se necesitaron versiones compatibles de CUDA (TensorFlow trae CUDA 12 y el
+  sistema tiene CUDA 13) y precargar `libcusolver`. cuDNN usa TF32 y FP16, así que los resultados difieren en el orden
+  de 10⁻³ (1 predicción distinta de 2 610). La laptop también limita: con el CPU a 90–96 °C hubo variación de ±2 s.
+
+### 8.4 Librerías y funciones que permiten trabajar con la GPU
+
+| Librería / función | Uso en el proyecto |
+|---|---|
+| `tensorflow[and-cuda]` 2.21 | Trae CUDA 12.5, cuDNN 9, cuBLAS, cuFFT y cuSOLVER como paquetes de pip; `tf.config.list_physical_devices("GPU")`, `set_memory_growth`, `tf.device("/GPU:0")` |
+| cuDNN / cuBLAS | Convoluciones, pooling y productos de matrices que TensorFlow ejecuta en la GPU |
+| `tf.keras.mixed_precision.set_global_policy("mixed_float16")` | Cómputo en FP16 sobre *tensor cores* |
+| `model.compile(steps_per_execution=32)` | Agrupa 32 pasos de entrenamiento por llamada a la GPU |
+| `tf.data` (`map(num_parallel_calls)`, `prefetch`) | Pipeline del CPU que alimenta a la GPU sin detenerla |
+| `tf.test.experimental.sync_devices()` | Sincronización para medir transferencias |
+| `numba.cuda` (`@cuda.jit`, `cuda.grid`, `cuda.blockIdx`, `cuda.shared.array`, `cuda.local.array`, `cuda.syncthreads`) | Kernels propios: convolución, pooling, densas y softmax |
+| `cuda.to_device`, `device_array`, `copy_to_host`, `cuda.event` | Memoria de la GPU, copias y medición de tiempos con eventos |
+| `numba-cuda[cu12]`, `cuda-bindings` | Compilador de Numba para CUDA 12 (comparte librerías con TensorFlow) |
+| `nvidia-smi --query-gpu ... -lms 250` | Monitoreo de uso, memoria, potencia y reloj de la GPU |
