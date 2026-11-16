@@ -23,6 +23,7 @@ def main():
     parser.add_argument("--model", default=str(MODELS_DIR / "cnn_base_gpu_fp32.keras"))
     parser.add_argument("--repeats", type=int, default=10)
     parser.add_argument("--numpy-repeats", type=int, default=3)
+    parser.add_argument("--profile-repeats", type=int, default=20)
     args = parser.parse_args()
 
     tf = load_tensorflow("gpu")
@@ -50,7 +51,7 @@ def main():
             for run in range(args.repeats):
                 (probabilities, timings), seconds = timed(current.predict, X_test)
                 rows.append({"implementation": name, "run": run, "seconds": seconds,
-                             **{key: value / 1000 for key, value in timings.items()}})
+                             **{key.replace("_ms", "_s"): value / 1000 for key, value in timings.items()}})
         monitor.set_phase("keras_gpu")
         for run in range(args.repeats):
             _, seconds = timed(lambda: model.predict(X_test, batch_size=256, verbose=0))
@@ -60,7 +61,13 @@ def main():
             numpy_probabilities, seconds = timed(predict_numpy, weights, X_test)
             rows.append({"implementation": "numpy_cpu", "run": run, "seconds": seconds})
 
-    profile = [{"variant": name, **row} for name, current in networks.items() for row in current.profile(X_test)]
+    profile = []
+    for name, current in networks.items():
+        current.predict(X_test)
+        samples = [current.profile(X_test) for _ in range(args.profile_repeats)]
+        for index, row in enumerate(samples[0]):
+            profile.append({"variant": name, **row,
+                            "ms": float(np.mean([sample[index]["ms"] for sample in samples]))})
     validation = {
         "images": int(len(X_test)),
         "numba_compile_and_upload_s": compile_seconds,

@@ -1,0 +1,23 @@
+variant,kernel,grid,block,threads,ms
+numba_cuda_naive,to_channels_first,"(4, 4, 768)","(16, 16)",3145728,0.46382080018520355
+numba_cuda_naive,conv1_relu,"(4, 4, 8192)","(16, 16)",33554432,4.957900810241699
+numba_cuda_naive,conv1_maxpool,"(2, 2, 8192)","(16, 16)",8388608,0.9424880146980286
+numba_cuda_naive,conv2_relu,"(2, 2, 16384)","(16, 16)",16777216,22.144844341278077
+numba_cuda_naive,conv2_maxpool,"(1, 1, 16384)","(16, 16)",4194304,0.48870079666376115
+numba_cuda_naive,conv3_relu,"(1, 1, 32768)","(16, 16)",8388608,21.950485134124754
+numba_cuda_naive,conv3_maxpool,"(1, 1, 32768)","(8, 8)",2097152,0.26192159950733185
+numba_cuda_naive,flatten,"(32, 256)","(256, 1)",2097152,0.07942719757556915
+numba_cuda_naive,dense1_relu,"(1, 256)","(128,)",32768,2.29237277507782
+numba_cuda_naive,dense2,"(1, 256)","(128,)",32768,0.02108159977942705
+numba_cuda_naive,softmax,"(2,)","(128,)",256,0.009332800190895796
+numba_cuda_tiled,to_channels_first,"(4, 4, 768)","(16, 16)",3145728,0.43259359449148177
+numba_cuda_tiled,conv1_relu,"(4, 4, 1024)","(16, 16)",4194304,2.1842575669288635
+numba_cuda_tiled,conv1_maxpool,"(2, 2, 8192)","(16, 16)",8388608,0.9424800038337707
+numba_cuda_tiled,conv2_relu,"(2, 2, 2048)","(16, 16)",2097152,9.975206470489502
+numba_cuda_tiled,conv2_maxpool,"(1, 1, 16384)","(16, 16)",4194304,0.48767679184675217
+numba_cuda_tiled,conv3_relu,"(1, 1, 4096)","(16, 16)",1048576,9.869937515258789
+numba_cuda_tiled,conv3_maxpool,"(1, 1, 32768)","(8, 8)",2097152,0.26343040019273756
+numba_cuda_tiled,flatten,"(32, 256)","(256, 1)",2097152,0.08078559786081314
+numba_cuda_tiled,dense1_relu,"(1, 256)","(128,)",32768,2.271732771396637
+numba_cuda_tiled,dense2,"(1, 256)","(128,)",32768,0.02095839977264404
+numba_cuda_tiled,softmax,"(2,)","(128,)",256,0.00965760014951229

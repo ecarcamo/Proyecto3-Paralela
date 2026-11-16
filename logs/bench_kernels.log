@@ -1,0 +1,63 @@
+{
+  "images": 2610,
+  "numba_compile_and_upload_s": 0.0017395839968230575,
+  "numba_first_call_with_jit_s": 1.274764055997366,
+  "max_abs_diff_numba_vs_keras": 0.0027321577072143555,
+  "max_abs_diff_numpy_vs_keras": 0.0027387142181396484,
+  "argmax_agreement_numba_vs_keras": 0.9996168582375479,
+  "accuracy_keras": 0.9333333333333333,
+  "accuracy_numba": 0.9337164750957855,
+  "accuracy_numpy": 0.9337164750957855,
+  "summary_seconds": {
+    "numba_cuda_naive": {
+      "n": 10,
+      "mean": 0.5654737286982708,
+      "std": 0.0009438057481849644,
+      "min": 0.5637890200014226,
+      "max": 0.5665795749955578
+    },
+    "numba_cuda_tiled": {
+      "n": 10,
+      "mean": 0.2888284349028254,
+      "std": 0.0014977365969197614,
+      "min": 0.28651324698876124,
+      "max": 0.2919236770103453
+    },
+    "keras_gpu": {
+      "n": 10,
+      "mean": 0.20737199099821738,
+      "std": 0.04170760353023081,
+      "min": 0.18092035299923737,
+      "max": 0.31245115099591203
+    },
+    "numpy_cpu": {
+      "n": 3,
+      "mean": 18.744316220332014,
+      "std": 1.21940806977737,
+      "min": 17.35479403399222,
+      "max": 19.63625010800024
+    }
+  }
+}
+{'variant': 'numba_cuda_naive', 'kernel': 'to_channels_first', 'grid': '(4, 4, 768)', 'block': '(16, 16)', 'threads': 3145728, 'ms': 0.46382080018520355}
+{'variant': 'numba_cuda_naive', 'kernel': 'conv1_relu', 'grid': '(4, 4, 8192)', 'block': '(16, 16)', 'threads': 33554432, 'ms': 4.957900810241699}
+{'variant': 'numba_cuda_naive', 'kernel': 'conv1_maxpool', 'grid': '(2, 2, 8192)', 'block': '(16, 16)', 'threads': 8388608, 'ms': 0.9424880146980286}
+{'variant': 'numba_cuda_naive', 'kernel': 'conv2_relu', 'grid': '(2, 2, 16384)', 'block': '(16, 16)', 'threads': 16777216, 'ms': 22.144844341278077}
+{'variant': 'numba_cuda_naive', 'kernel': 'conv2_maxpool', 'grid': '(1, 1, 16384)', 'block': '(16, 16)', 'threads': 4194304, 'ms': 0.48870079666376115}
+{'variant': 'numba_cuda_naive', 'kernel': 'conv3_relu', 'grid': '(1, 1, 32768)', 'block': '(16, 16)', 'threads': 8388608, 'ms': 21.950485134124754}
+{'variant': 'numba_cuda_naive', 'kernel': 'conv3_maxpool', 'grid': '(1, 1, 32768)', 'block': '(8, 8)', 'threads': 2097152, 'ms': 0.26192159950733185}
+{'variant': 'numba_cuda_naive', 'kernel': 'flatten', 'grid': '(32, 256)', 'block': '(256, 1)', 'threads': 2097152, 'ms': 0.07942719757556915}
+{'variant': 'numba_cuda_naive', 'kernel': 'dense1_relu', 'grid': '(1, 256)', 'block': '(128,)', 'threads': 32768, 'ms': 2.29237277507782}
+{'variant': 'numba_cuda_naive', 'kernel': 'dense2', 'grid': '(1, 256)', 'block': '(128,)', 'threads': 32768, 'ms': 0.02108159977942705}
+{'variant': 'numba_cuda_naive', 'kernel': 'softmax', 'grid': '(2,)', 'block': '(128,)', 'threads': 256, 'ms': 0.009332800190895796}
+{'variant': 'numba_cuda_tiled', 'kernel': 'to_channels_first', 'grid': '(4, 4, 768)', 'block': '(16, 16)', 'threads': 3145728, 'ms': 0.43259359449148177}
+{'variant': 'numba_cuda_tiled', 'kernel': 'conv1_relu', 'grid': '(4, 4, 1024)', 'block': '(16, 16)', 'threads': 4194304, 'ms': 2.1842575669288635}
+{'variant': 'numba_cuda_tiled', 'kernel': 'conv1_maxpool', 'grid': '(2, 2, 8192)', 'block': '(16, 16)', 'threads': 8388608, 'ms': 0.9424800038337707}
+{'variant': 'numba_cuda_tiled', 'kernel': 'conv2_relu', 'grid': '(2, 2, 2048)', 'block': '(16, 16)', 'threads': 2097152, 'ms': 9.975206470489502}
+{'variant': 'numba_cuda_tiled', 'kernel': 'conv2_maxpool', 'grid': '(1, 1, 16384)', 'block': '(16, 16)', 'threads': 4194304, 'ms': 0.48767679184675217}
+{'variant': 'numba_cuda_tiled', 'kernel': 'conv3_relu', 'grid': '(1, 1, 4096)', 'block': '(16, 16)', 'threads': 1048576, 'ms': 9.869937515258789}
+{'variant': 'numba_cuda_tiled', 'kernel': 'conv3_maxpool', 'grid': '(1, 1, 32768)', 'block': '(8, 8)', 'threads': 2097152, 'ms': 0.26343040019273756}
+{'variant': 'numba_cuda_tiled', 'kernel': 'flatten', 'grid': '(32, 256)', 'block': '(256, 1)', 'threads': 2097152, 'ms': 0.08078559786081314}
+{'variant': 'numba_cuda_tiled', 'kernel': 'dense1_relu', 'grid': '(1, 256)', 'block': '(128,)', 'threads': 32768, 'ms': 2.271732771396637}
+{'variant': 'numba_cuda_tiled', 'kernel': 'dense2', 'grid': '(1, 256)', 'block': '(128,)', 'threads': 32768, 'ms': 0.02095839977264404}
+{'variant': 'numba_cuda_tiled', 'kernel': 'softmax', 'grid': '(2,)', 'block': '(128,)', 'threads': 256, 'ms': 0.00965760014951229}
