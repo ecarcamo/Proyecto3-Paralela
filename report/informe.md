@@ -313,9 +313,6 @@ Porque cada tipo de trabajo encaja con un hardware distinto:
 | Nicolás Concuá (`NicoCT04`) | Preparación de datos en paralelo en el CPU | Carga con `multiprocessing` y memoria compartida (`src/parallel_cpu/`), escalabilidad de 1 a 32 procesos y `fork` vs `spawn`, pipeline `tf.data`, pool persistente, análisis del paso 3 y discusión 8.1 |
 | Esteban Cárcamo (`ecarcamo`) | Entorno CUDA y GPU | Entorno e inventario de hardware, entrenamiento en GPU (`src/gpu/train.py`), monitor de `nvidia-smi`, kernels Numba CUDA (`src/gpu/kernels.py`), diseño y resultados de los pasos 4–5 y discusión 8.2–8.4 |
 
-Por autorización del catedrático, todo se ejecutó en la computadora de Esteban, porque las de los otros dos
-integrantes se dañaron. Cada commit lleva el usuario de quien hizo esa parte.
-
 ## Anexo: cómo reproducir
 
 ```bash
