@@ -183,6 +183,10 @@ es de 2.7·10⁻³, por el TF32 que usa cuDNN. De las 0.289 s, solo 17.5 ms son 
 
 ## 7. Evidencia del uso de recursos
 
+![Cuatro escenarios](../figures/00_cuatro_escenarios.png)
+
+Los escenarios 1 y 2 comparan cómo se leen las imágenes (un hilo vs 24 procesos). Los escenarios 3 y 4 comparten la misma carga en paralelo; la diferencia es solo el **entrenamiento**: en el 3 la CNN corre en el **CPU** (TensorFlow multihilo), y en el 4 en la **GPU** con CUDA (precisión mixta, `tf.data` y `steps_per_execution=32`).
+
 Capturas de `btop` (los 32 núcleos y la GPU) y de `nvidia-smi`, tomadas mientras corría cada fase
 (`scripts/demo_workload.py`):
 
